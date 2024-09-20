@@ -2,27 +2,35 @@ from tkinter import *
 
 window = Tk()
 window.title("Miles to Kilometers")
-window.minsize(width=500, height=300)
+window.config(padx=20, pady=20)
 
 
-def calculate():
+def convert():
     num = float(my_input.get())
     num *= 1.6
-    my_label2.config(text=num)
+    label_num.config(text=f"{num}")
 
 
-my_input = Entry()
-my_input.config(width=5)
+my_input = Entry(width=5)
 my_input.insert(END, string="0")
-my_input.grid(column=1, row=1)
+my_input.grid(column=1, row=0)
 
-my_label1 = Label(text="Miles")
-my_label1.grid(column=2, row=1)
+label_miles = Label(text="Miles")
+label_miles.grid(column=2, row=0)
 
-my_label2 = Label(text="is equal to 0 Km")
-my_label2.grid(column=3, row=3)
+label_equal = Label(text="is equal to")
+label_equal.grid(column=0, row=1)
+label_equal.config(padx=10, pady=10)
 
-my_btn = Button(text="Convert", command=calculate)
-my_btn.grid(column=4, row=4)
+label_num = Label(text="0")
+label_num.grid(column=1, row=1)
+label_num.config(padx=10, pady=10)
+
+label_km = Label(text="Km")
+label_km.grid(column=2, row=1)
+label_equal.config(padx=10, pady=10)
+
+my_btn = Button(text="Convert", command=convert)
+my_btn.grid(column=1, row=2)
 
 window.mainloop()
