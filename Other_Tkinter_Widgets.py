@@ -32,8 +32,8 @@ text = Text(height=5, width=30)
 text.focus()
 #Adds some text to begin with.
 text.insert(END, "Example of multi-line text entry.")
-#Get's current value in textbox at line 1, character 0
-print(text.get("1.0", END))
+#Gets current value in textbox at line 1, character 0
+print(text.get("1.3", END))
 text.pack()
 
 #Spinbox
